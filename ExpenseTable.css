@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
 
 .table{
     text-align: left !important;
     vertical-align: text-top !important;
 
 }
+table.dataTable thead {background-color:#0A6EBD}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -57,6 +64,7 @@ input::-webkit-inner-spin-button {
     padding-bottom: 4px;
     padding-top: 2px;
     font-size: 15px;
+    margin-bottom: -19px;
 }
 /* #addbtn{
     display: flex;
@@ -65,10 +73,9 @@ input::-webkit-inner-spin-button {
     top: 52px;
     right: 12px;
 } */
-/* #totalAmount{
-    width: 20%;
-    border: 2px solid black;
-} */
+ #totalAmount{
+    float: right;
+} 
 /* #totalBox{
     width: 270px;
     height: 40px;
@@ -83,14 +90,18 @@ input::-webkit-inner-spin-button {
     margin-left: 45px;
     position: relative;
     bottom: 5px;
+    margin-bottom: 28px;
+    margin-top: -25px;
 }
 #totalText{
     font-size: larger;
     margin-left:20px;
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Times New Roman', Times, serif; */
     position: relative;
     left: 40px !important;
+    margin-bottom: 28px;
+    margin-top: -25px;
 }
 #Box{
     display: flex;
@@ -105,8 +116,60 @@ input::-webkit-inner-spin-button {
     padding-right: 6px;
     padding-bottom: 3px;
     padding-top: 0px;
+    transition: none;
+    border-color: transparent !important;
 }
 #role
 {
     padding-top: 1% !important;
 }
+
+.btn{
+    transition: transparent !important;
+    border-color: transparent !important;
+}
+
+.dataTables_wrapper .dataTables_length select { /* adjustment for page lenght*/
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: transparent;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+.dataTables_wrapper {  /*  for add expense btn adjustment*/
+    position: static!important;
+    clear: both;
+}
+
+.fa-trash{
+    color: #dc3545;
+}
+
+.fa-times-circle{
+    font-size: 25px !important;
+}
+.fa-user-circle{
+    font-size: 25px !important;
+    margin-top:3px !important;
+}
+.la-check-circle{
+    color: rgb(77, 245, 116);
+}
+#completedIcon{
+    color:#16FF00;
+    margin: -2px;
+}
+#progressIcon{
+color:#FFED00;
+margin:-4px;
+font-size: 19px !important;
+}
+#draftIcon{
+    font-size: 17px !important;
+    margin: -2px;
+}
+#submittedIcon{
+    margin: -2px;
+}
+  

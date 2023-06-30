@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Table</title>
     <link rel="stylesheet" href="./ExpenseTable.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -18,6 +19,11 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/plug-ins/1.13.4/api/sum().js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- <script src=" https://cdn.datatables.net/1.13.4/js/dataTables.semanticui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js"></script> 
@@ -29,23 +35,23 @@
 </head>
 <body>
 <div class="container">
-    <div class="" id="tableHeading"> <h3 style="text-align: center;">Expense Table</h3></div>
+    <div class="" id="tableHeading"> <h2 style="text-align: center; font-weight: 700;">Expense Table</h2></div>
     <div id="addBtnDiv" class="">
         <div class="form-group" id="selectroleid">
-            <label for="role">Role&nbsp;&nbsp;</label>
-            <select class="form-select" id="accessSelect" style="width: 100%;">
+            <label for="role"><i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <select class="form-select" id="role" selected style="width: 100%;">
                 <option value="admin"> admin</option>
                 <option value="employee">employee</option>   
             </select>
         </div>
-        <button type="button" class=" btn btn-success" id="addbtn" >Add Expense</button>
+        <button type="button" class=" btn btn-success" id="addbtn" style="background-color: #0A6EBD !important;" >Add Expense</button>
     </div>    
-    <table id="expenseTable" class="display compact table table-bordered table-striped ">
+    <table id="expenseTable" class="display  table table-bordered table-striped ">
         <thead>
-            <tr>
+            <tr style="color: #fff !important">
                 <th id="col1">Expense Id</th>
                 <th id="col2">Description</th>
-                <th id="col3">Amount(INR)</th>
+                <th id="col3">Amount(&#8377;)</th>
                 <th id="col4">Status</th>
                 <th id="col5">Action</th>
             </tr>
@@ -57,7 +63,8 @@
                 <td>100.00</td>
                 <td>Draft</td>
                 <!-- <button class="btn btn-success " id="savebtn"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>&nbsp;&nbsp; -->
-                <td><button class="btn btn-info " id="editbtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>&nbsp;&nbsp;<button class="btn btn-danger" id="deleteBtn"><i class='fa fa-trash'  aria-hidden='true'></i></button></td>
+                <!-- <td><i class="fa fa-pencil-square-o" id="editbtn" aria-hidden="true"></i>&nbsp;&nbsp;<i class='fa fa-trash' id="deleteBtn" aria-hidden='true'></i></td> -->
+                <td><i class="fa fa-pencil-square-o" id="editbtn" aria-hidden="true"></i>&nbsp;&nbsp;<i class='fa fa-trash' id="deleteBtn" aria-hidden='true'></i></td>
             </tr>
             <tr>
                 <td>EXP8025</td>
@@ -65,7 +72,7 @@
                 <td>100.00</td>
                 <td>Draft</td>
                 <!-- <button class="btn btn-success " id="savebtn"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>&nbsp;&nbsp; -->
-                <td><button class="btn btn-info " id="editbtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>&nbsp;&nbsp;<button class="btn btn-danger" id="deleteBtn"><i class='fa fa-trash'  aria-hidden='true'></i></button></td>
+                <td><i class="fa fa-pencil-square-o" id="editbtn" aria-hidden="true"></i>&nbsp;&nbsp;<i class='fa fa-trash' id="deleteBtn" aria-hidden='true'></i></td>
             </tr>
             <tr>
                 <td>EXP8026</td>
@@ -73,7 +80,7 @@
                 <td>100.00</td>
                 <td>Draft</td>
                 <!-- <button class="btn btn-success " id="savebtn"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>&nbsp;&nbsp; -->
-                <td><button class="btn btn-info " id="editbtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>&nbsp;&nbsp;<button class="btn btn-danger" id="deleteBtn"><i class='fa fa-trash'  aria-hidden='true'></i></button></td>
+                <td><i class="fa fa-pencil-square-o" id="editbtn" aria-hidden="true"></i>&nbsp;&nbsp;<i class='fa fa-trash' id="deleteBtn" aria-hidden='true'></i></td>
             </tr>
             <tr>
                 <td>EXP8034</td>
@@ -81,7 +88,7 @@
                 <td>100.00</td>
                 <td>Draft</td>
                 <!-- <button class="btn btn-success " id="savebtn"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>&nbsp;&nbsp; -->
-                <td><button class="btn btn-info " id="editbtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>&nbsp;&nbsp;<button class="btn btn-danger" id="deleteBtn"><i class='fa fa-trash'  aria-hidden='true'></i></button></td>
+                <td><i class="fa fa-pencil-square-o" id="editbtn" aria-hidden="true"></i>&nbsp;&nbsp;<i class='fa fa-trash' id="deleteBtn" aria-hidden='true'></i></td>
             </tr>
             <tr>
                 <td>EXP8037</td>
@@ -89,7 +96,7 @@
                 <td>100.00</td>
                 <td>Draft</td>
                 <!-- <button class="btn btn-success " id="savebtn"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>&nbsp;&nbsp; -->
-                <td><button class="btn btn-info " id="editbtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>&nbsp;&nbsp;<button class="btn btn-danger" id="deleteBtn"><i class='fa fa-trash'  aria-hidden='true'></i></button></td>
+                <td><i class="fa fa-pencil-square-o" id="editbtn" aria-hidden="true"></i>&nbsp;&nbsp;<i class='fa fa-trash' id="deleteBtn" aria-hidden='true'></i></td>
             </tr>
             <tr>
                 <td>EXP8038</td>
@@ -97,7 +104,7 @@
                 <td>100.00</td>
                 <td>Draft</td>
                 <!-- <button class="btn btn-success " id="savebtn"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>&nbsp;&nbsp; -->
-                <td><button class="btn btn-info " id="editbtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>&nbsp;&nbsp;<button class="btn btn-danger" id="deleteBtn"><i class='fa fa-trash'  aria-hidden='true'></i></button></td>
+                <td><i class="fa fa-pencil-square-o" id="editbtn" aria-hidden="true"></i>&nbsp;&nbsp;<i class='fa fa-trash' id="deleteBtn" aria-hidden='true'></i></td>
             </tr>
             <tr>
                 <td>EXP8040</td>
@@ -105,7 +112,7 @@
                 <td>100.00</td>
                 <td>Draft</td>
                 <!-- <button class="btn btn-success " id="savebtn"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>&nbsp;&nbsp; -->
-                <td><button class="btn btn-info " id="editbtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>&nbsp;&nbsp;<button class="btn btn-danger" id="deleteBtn"><i class='fa fa-trash'  aria-hidden='true'></i></button></td>
+                <td><i class="fa fa-pencil-square-o" id="editbtn" aria-hidden="true"></i>&nbsp;&nbsp;<i class='fa fa-trash' id="deleteBtn" aria-hidden='true'></i></td>
             </tr>
             <tr>
                 <td>EXP8041</td>
@@ -113,7 +120,7 @@
                 <td>100.00</td>
                 <td>Draft</td>
                 <!-- <button class="btn btn-success " id="savebtn"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>&nbsp;&nbsp; -->
-                <td><button class="btn btn-info " id="editbtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>&nbsp;&nbsp;<button class="btn btn-danger" id="deleteBtn"><i class='fa fa-trash'  aria-hidden='true'></i></button></td>
+                <td><i class="fa fa-pencil-square-o" id="editbtn" aria-hidden="true"></i>&nbsp;&nbsp;<i class='fa fa-trash' id="deleteBtn" aria-hidden='true'></i></td>
             </tr>
             <tr>
                 <td>EXP8042</td>
@@ -121,7 +128,7 @@
                 <td>100.00</td>
                 <td>Draft</td>
                 <!-- <button class="btn btn-success " id="savebtn"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>&nbsp;&nbsp; -->
-                <td><button class="btn btn-info " id="editbtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>&nbsp;&nbsp;<button class="btn btn-danger" id="deleteBtn"><i class='fa fa-trash'  aria-hidden='true'></i></button></td>
+                <td><i class="fa fa-pencil-square-o" id="editbtn" aria-hidden="true"></i>&nbsp;&nbsp;<i class='fa fa-trash' id="deleteBtn" aria-hidden='true'></i></td>
             </tr>
             <tr>
                 <td>EXP8044</td>
@@ -129,7 +136,7 @@
                 <td>100.00</td>
                 <td>Draft</td>
                 <!-- <button class="btn btn-success " id="savebtn"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>&nbsp;&nbsp; -->
-                <td><button class="btn btn-info " id="editbtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>&nbsp;&nbsp;<button class="btn btn-danger" id="deleteBtn"><i class='fa fa-trash'  aria-hidden='true'></i></button></td>
+                <td><i class="fa fa-pencil-square-o" id="editbtn" aria-hidden="true"></i>&nbsp;&nbsp;<i class='fa fa-trash' id="deleteBtn" aria-hidden='true'></i></td>
             </tr>
             
         
@@ -137,7 +144,7 @@
     </table>
     <div id="Box">
         <label for="totalBox"  id="totalText" >Total:</label>
-        <div id="totalBox" class="form-control" style="width:178px;"><span id="totalAmount">100.00</span></div>
+        <div id="totalBox" class="form-control" style="width:168px;"><span>&#8377;&nbsp;</span><span id="totalAmount">0.00</span></div>
     </div>
     <!-- Add Expense Modal -->
     <div class="modal " id="ExpenseModal"    aria-hidden="true">
@@ -166,10 +173,12 @@
                     <div class="form-group" id="statusDiv">
                         <label for="status">Status:</label>
                         <select class="form-select" id="status" style="width: 30%;">
-                            <option value="Draft"> Draft</option>
-                            <option value="Completed">Completed</option>
-                            <option value="InProgress">InProgress</option>
+                            <option value="Draft">Draft</option>
                             <option value="Submitted">Submitted</option>
+                            
+                            <option value="InProgress">InProgress</option>
+                            <option value="Completed">Completed</option>
+                            
                            
                         </select>
                     </div>
